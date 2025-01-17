@@ -9,6 +9,8 @@ if (isset($_POST["create"])) {
     $sqlInsert = "INSERT INTO posts(date, title, summary, content) VALUES ('$date', '$title', '$summary', '$content')";
 
     if (mysqli_query($conn, $sqlInsert)) {
+        session_start();
+        $_SESSION["create"] = "Post added successfully";
         header("Location: index.php");
     } else {
         die("Data is not inserted!");
@@ -28,6 +30,8 @@ if (isset($_POST["update"])) {
     $sqlUpdate = "UPDATE posts SET title = '$title', summary = '$summary', content = '$content', date = '$date' WHERE id = $id";
 
     if (mysqli_query($conn, $sqlUpdate)) {
+        session_start();
+        $_SESSION["update"] = "Post updated successfully";
         header("Location: index.php");
     } else {
         die("Data is not updated!");
