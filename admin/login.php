@@ -2,7 +2,7 @@
 if (isset($_POST['login'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
-    if ($username == "admin" && $password == "pass") {
+    if ($username == "admin" && $password == "admin") {
         session_start();
         $_SESSION["user"] = "admin";
         header("Location: index.php");
@@ -28,7 +28,7 @@ if (isset($_POST['login'])) {
                     <input class="form-control" type="password" name="password" id="" placeholder="Password">
                 </div>
                 <div class="form-field mb-4">
-                    <input class="btn btn-primary" type="submit" value="login" name="login">
+                    <input class="btn btn-primary" type="submit" value="Login" name="login">
                 </div>
             </form>
         </div>

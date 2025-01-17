@@ -12,7 +12,7 @@
     <header class="p-4 bg-dark text-center">
         <h1><a href="index.php" class="text-light text-decoration-none">Simple Blog</a></h1>
     </header>
-    <div class="post-list">
+    <div class="post-list mt-5">
         <div class="container">
             <?php
             $id = $_GET['id'];

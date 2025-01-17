@@ -1,9 +1,9 @@
 <?php
 $id = $_GET["id"];
-if($id) {
+if ($id) {
     include("../connect.php");
     $sqlDelete = "DELETE FROM posts WHERE id = $id";
-    if(mysqli_query($conn, $sqlDelete)) {
+    if (mysqli_query($conn, $sqlDelete)) {
         session_start();
         $_SESSION["delete"] = "Post deleted successfully";
         header("Location: index.php");
@@ -13,4 +13,3 @@ if($id) {
 } else {
     echo "Post not found";
 }
-?>

@@ -3,6 +3,42 @@ include("templates/header.php");
 ?>
 
 <div class="posts-list w-100 p-5">
+    <?php
+    if (isset($_SESSION["create"])) {
+    ?>
+        <div class="alert alert-success">
+            <?php
+            echo $_SESSION["create"];
+            ?>
+        </div>
+    <?php
+        unset($_SESSION["create"]);
+    }
+    ?>
+    <?php
+    if (isset($_SESSION["update"])) {
+    ?>
+        <div class="alert alert-success">
+            <?php
+            echo $_SESSION["update"];
+            ?>
+        </div>
+    <?php
+        unset($_SESSION["update"]);
+    }
+    ?>
+    <?php
+    if (isset($_SESSION["delete"])) {
+    ?>
+        <div class="alert alert-success">
+            <?php
+            echo $_SESSION["delete"];
+            ?>
+        </div>
+    <?php
+        unset($_SESSION["delete"]);
+    }
+    ?>
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -28,10 +64,10 @@ include("templates/header.php");
                         <a class="btn btn-warning" href="edit.php?id=<?php echo $data["id"] ?>">Edit</a>
                         <a class="btn btn-danger" href="delete.php?id=<?php echo $data["id"] ?>">Delete</a>
                     </td>
-                <?php
-            }
-                ?>
                 </tr>
+            <?php
+            }
+            ?>
         </tbody>
     </table>
 </div>
